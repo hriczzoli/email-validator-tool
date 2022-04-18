@@ -29,7 +29,7 @@ func checkDomain(domain string) {
 
 	mxRecords, err := net.LookupMX(domain)
 	if err != nil {
-		log.Printf("Error: %v \n", err)
+		log.Printf("Error: %v \t", err)
 	}
 
 	if len(mxRecords) > 0 {
@@ -38,7 +38,7 @@ func checkDomain(domain string) {
 
 	textRecords, err := net.LookupTXT(domain)
 	if err != nil {
-		log.Printf("Error: %v \n", err)
+		log.Printf("Error: %v \t", err)
 	}
 
 	for _, record := range textRecords {
